@@ -1,5 +1,5 @@
 fn main() {
     let op = lib::GlobalLpPool::default();
-    let result = op.eval_t(ndarray::arr2(&[[1.0f64, 2.0]]).view().into_dyn());
+    let result = op.eval(vec![1.0f64, 2.0], &[1, 2]);
     println!("{:?}", result);
 }
