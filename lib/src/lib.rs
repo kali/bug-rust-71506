@@ -17,7 +17,7 @@ impl GlobalLpPool {
         let input = array.into_shape(((n * c), divisor)).unwrap();
         let divisor = (divisor as f64).recip();
         let result = if self.p == 1 {
-            input.fold_axis(Axis(1), 0.0, |&a, &b| a + b.abs())
+            todo!();
         } else {
             input
                 .fold_axis(Axis(1), 0.0, |&a, &b| a + b.abs().powi(self.p as i32))
