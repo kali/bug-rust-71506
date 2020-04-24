@@ -1,3 +1,5 @@
+#![allow(deprecated)]
+
 use ndarray::*;
 
 #[derive(Debug, Clone, Default)]
@@ -8,13 +10,9 @@ pub struct GlobalLpPool {
 impl GlobalLpPool {
     pub fn eval(&self, array: Vec<f64>, shape: &[usize]) -> Vec<f64> {
         let array = ndarray::Array::from_vec(array).into_shape(shape).unwrap();
-        let n = array.shape()[0];
-        let c = array.shape()[1];
+        let n = shape[0];
+        let c = shape[1];
 
-        let mut final_shape = array.shape().to_vec();
-        for dim in final_shape[2..].iter_mut() {
-            *dim = 1;
-        }
         let divisor = array.len() / (n * c);
         let input = array.into_shape(((n * c), divisor)).unwrap();
         let divisor = (divisor as f64).recip();
