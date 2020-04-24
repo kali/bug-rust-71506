@@ -10,3 +10,6 @@ members = ["lib"]
 [dependencies]
 ndarray = "0.13"
 lib = { path = "lib" }
+
+[profile.release]
+lto = true
