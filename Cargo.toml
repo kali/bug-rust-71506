@@ -1,0 +1,12 @@
+[package]
+name = "bug-rust-71506"
+version = "0.1.0"
+authors = ["Mathieu Poumeyrol <kali@zoy.org>"]
+edition = "2018"
+
+[workspace]
+members = ["lib"]
+
+[dependencies]
+ndarray = "0.13"
+lib = { path = "lib" }
