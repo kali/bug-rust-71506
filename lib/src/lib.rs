@@ -20,10 +20,6 @@ impl GlobalLpPool {
             input
                 .fold_axis(Axis(1), 0.0, |&a, &b| a + b.abs())
                 .map(|a| *a * divisor)
-        } else if self.p == 2 {
-            input
-                .fold_axis(Axis(1), 0.0, |&a, &b| a + b * b)
-                .map(|a| a.sqrt() * divisor)
         } else {
             input
                 .fold_axis(Axis(1), 0.0, |&a, &b| a + b.abs().powi(self.p as i32))
