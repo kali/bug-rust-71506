@@ -5,4 +5,4 @@ authors = ["Mathieu Poumeyrol <kali@zoy.org>"]
 edition = "2018"
 
 [dependencies]
-ndarray = "0.13"
+ndarray = "=0.13.1"
